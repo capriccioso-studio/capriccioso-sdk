@@ -9,12 +9,12 @@
   "changelogUrl": "https://example.com/changelog.html",
   "licensesUrl": "https://example.com/licensing.html",
   "dependencies": {
-    "com.[company-name].other-package": "2.0.0"
+    "io.sentry.unity": "1.3.0"
  },
  "keywords": [
-    "keyword1",
-    "keyword2",
-    "keyword3"
+    "logging",
+    "performance",
+    "diagnostics"
   ],
   "author": {
     "name": "Capriccioso Games Studio",
