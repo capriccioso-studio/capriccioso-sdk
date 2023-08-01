@@ -6,12 +6,12 @@ namespace Capriccioso
 {
     public static class LogColors
     {
-        public string Log = "#ccccff";
-        public string Info = "#ccffcc";
-        public string Success = "#ccffcc";
-        public string Data = "#ccccff";
-        public string Test = "#ccccff";
-        public string Warning = "#ffffcc";
-        public string Error = "#ffcccc";
+        public string Log = "#6C757D";
+        public string Info = "#007bff";
+        public string Success = "#28A745";
+        public string Data = "#563D7C";
+        public string Test = "#17A2B8";
+        public string Warning = "#FFC107";
+        public string Error = "#DC3545";
     }
 }

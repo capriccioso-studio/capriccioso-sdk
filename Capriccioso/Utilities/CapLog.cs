@@ -27,6 +27,12 @@ namespace Capriccioso
             string log = $"<color={LogColors.Log}><b>[{file} @ {caller}():{lineNumber}]</b> LOGG </color> - {message}";
             Debug.Log(log, context);
         }
+
+        public void LogInfo(string message, Object context = null, [CallerFilePath] string path = null, [CallerLineNumber] int lineNumber = 0, [CallerMemberName] string caller = null)
+        {
+            
+        }
+        
     }
 
 }
