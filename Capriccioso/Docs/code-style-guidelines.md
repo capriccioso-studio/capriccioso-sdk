@@ -132,7 +132,7 @@ private static readonly JsonSerializerOptions serializationOptions = new()
     WriteIndented = true,
 };
 
-//- Non-static initializatiossn inside the constructor.
+//- Non-static initializatiossn inside the constaructor.
 private readonly object mapLock;
 
 public ClassConstructor()
