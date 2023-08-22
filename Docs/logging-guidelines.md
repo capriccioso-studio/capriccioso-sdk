@@ -18,25 +18,24 @@ This file discusses how do we insert logging into the code and how do we format 
 
 ## Classes
 
-With each class the developer must **decide whether or not the class should be logged**. If a class does not contain any logic, there is no reason to log it. If a class contains just a small amount of logic and its methods are short and simple, it may not need logging. All other classes should be logged. **Static classes use static loggers, non-static classes use instance loggers**. Sometimes a non-static class contains a complex static method, in which case it may contain both a static and a non-static logger. Logger is always called `log` except for the case of static and non-static loggers in one class, where the class logger is called `clog`.
+With each class the developer must **decide whether or not the class should be logged**. If a class does not contain any logic, there is no reason to log it. If a class contains just a small amount of logic and its methods are short and simple, it may not need logging. All other classes should be logged. **Static classes use static loggers, non-static classes use instance loggers**. Sometimes a non-static class contains a complex static method, in which case it may contain both a static and a non-static logger. 
+
+Classes should have an override for ToString to help with Sentry debugging 
 
 **Examples:**
 ```csharp
 //- In case both static and non-static loggers are present, class logger is called "clog".
-public class InputHistory
+public class Bullet
 {
-    /// <summary>Class logger.</summary>
-    private static readonly Logger clog = LogManager.GetCurrentClassLogger();
+    public string name;
+    public float damage;
 
-    /// <summary>Instance logger.</summary>
-    private readonly Logger log = LogManager.GetCurrentClassLogger();
-
-
-//- In case there is just the class logger, it is called "log".
-public static class Program
-{
-    /// <summary>Class logger.</summary>
-    private static readonly Logger log = LogManager.GetCurrentClassLogger();
+    public override string ToString()
+    {
+        base.ToString();
+        return $"Name : {name} \n" +
+                "damage : {damage}";
+    }
 
 ```
 
